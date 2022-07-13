@@ -1,10 +1,4 @@
-# [team name] Team Charter
-
-## Instructions
-
-*Answer the questions below and fill out the process sections with your team’s
-mechanisms to follow your answers. Remove the italicized examples text as you
-go.*
+# [The Streamers] Team Charter
 
 ## Purpose
 
@@ -33,12 +27,10 @@ These resources may be helpful as you fill out your team charter. They are optio
 
 ### Administrative Information:
 
-|Name            |Preferred Contact Method (Zoom, Slack, email, etc.) |
-|---	           |---                                           |
-|Team Member (a) |                                              |
-|Team Member (b) |                                              |
-|Team Member (c) |                                              |
-|Team Member (d) |                                              |
+| Name            | Preferred Contact Method (Zoom, Slack, email, etc.)  |
+|-----------------|------------------------------------------------------|
+| Sarah Linebaugh | Slack / Email                                        |
+| Deepali Sethia  | Slack / Email                                        |
 
 ### Psychological safety
 
@@ -106,19 +98,24 @@ These resources may be helpful as you fill out your team charter. They are optio
 **What is personally important for each team member about joining BloomTech? About
 becoming an software engineer?**
 
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
+* ***Sarah***: I've always enjoyed the technical industry and I really just want to get a 
+nice career in tech and network. I feel like Bloomtech is a great stepping stone into a software career.
+
+* ***Deepali***: I've regretted not completing my degree in Computer Science and Bloomtech 
+is a great way for me to get back into programming and software. I've always wanted to become a software 
+engineer and Bloomtech is a great place to start without having the 4 years commitment. 
 
 **What each team member wants to achieve: e.g. improve analytical skills, learn
 project management skills, develop public speaking skills, speak up more, speak
 up less, etc.**
 
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
+* ***Sarah***: I want to improve my analytical and critical thinking skills, my teamwork skills, and real
+world applications.
+
+* ***Deepali***: I would also like to improve my analytical and critical thinking skills, as well as 
+developing public speaking and leadership skills. 
+
+
 
 ## Team Member Roles and Responsibilities
 
@@ -127,18 +124,16 @@ roles will be permanent and some may be temporary. Some roles may be assigned to
 one or two people, and others may be rotated. Feel free to create additional
 rotating or permanent roles as you go.*
 
-|**Role**               |**Responsibilities** |**Primary person** |**Secondary person** |
-|---                    |---                  |---                |---                  |
-|Liaison to Instructors | Main contact to instructor to give status updates, including team dynamics, project progress, etc |||
-|Rotating Role 1        |                     |                   |                     |
-|Rotating Role 2        |                     |                   |                     |
-|Rotating Role 3        |                     |                   |                     |
+| **Role**        | **Responsibilities**                                                                              | **Equally Shared Responsibilities** |
+|-----------------|---------------------------------------------------------------------------------------------------|-------------------------------------|
+| Scrum Queen     | Main contact to instructor to give status updates, including team dynamics, project progress, etc | *Sarah and Deepali*                 |
+| Backend Dev     | Backend dev responsibilities to include AWS and Java programming                                  | *Sarah and Deepali*                 |
+| Front End Dev   | Front End responsibilities including but not limited to designing and implementing the pages      | *Sarah and Deepali*                 |                                                                       |                    |
+
 
 ## Acknowledgement
 
 **I agree to the terms and conditions of these team agreements:**
 
-* Team member (a) Name & Date:
-* Team member (b) Name & Date:
-* Team member (c) Name & Date:
-* Team member (d) Name & Date:
+* Team member (a) Name & Date: ***Sarah Linebaugh* -- 07-13-2022**
+* Team member (b) Name & Date: ***Deepali Sethia* -- 07-13-2022**
