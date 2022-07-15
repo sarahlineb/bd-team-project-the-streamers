@@ -1,0 +1,89 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title Underground Music Playlist Service
+
+enum Genres {
+    ALT_ROCK
+    HIPHOP_RNB
+    COUNTRY
+    OLDIES
+    ELECTRONIC
+    SOUNDTRACKS
+    REGGAE
+    INDIE
+    INSTRUMENTAL
+    POP
+    JAZZ
+    LATIN
+}
+
+class CreateNewUser {
+    -Logger log
+    -UserDao userDao
+    -PlaylistDao playlistDao
+    +handleRequest (CreateProvidedPlaylistRequest createProvidedPlaylistRequest, Context context) : CreateProvidedPlaylistResult
+}
+
+class GetExistingUser {
+    -Logger log
+    -UserDao userDao
+    -ProvidedPlaylistDao providedPlaylistDao
+    -UserPlaylistDao userPlaylistDao
+    +handleRequest (final GetProvidedPlaylistRequest getProvidedPlaylistRequest, Context context) : GetProvidedPlaylistResult
+}
+
+class AddSongToUserPlaylistDao {
+    -addSongToCustomUserPlaylist (String id)
+}
+
+
+class UserDao {
+    dynamoDbMapper : DynamoDBMapper
+    +getUser(String id) : User
+}
+
+newpage
+
+class CreateProvidedPlaylistRequest {
+    -getSongsByGenre
+    -AddSongToProvidedPlaylist
+}
+
+class GetProvidedPlaylistRequest {
+    -getPlaylist (String id)
+}
+
+class GetProvidedPlaylistResult {
+    -Logger log
+    -ProvidedPlaylistDao providedPlaylistDao
+}
+newpage
+
+class User {
+    @DynamoDBHashKey id : String
+    name : String
+    customerId : String
+    providedPlaylistId : String
+    personalPlaylistId : String
+    genreTags : Set<String>
+    +String : getId()
+    +void setId(String id)
+}
+
+class Playlist {
+    songId : String
+    songName : String
+    genreTags : Set<String>
+}
+
+newpage
+
+class InvalidUserIdException {
+    -{static} long serialVersionUID
+}
+
+class InvalidCharacterException {
+    -{static} long serialVersionUID
+}
+@enduml
