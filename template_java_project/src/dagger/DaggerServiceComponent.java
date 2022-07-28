@@ -45,7 +45,7 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
     @Override
     public GeneratePlaylistActivity provideGeneratePlaylistActivity() {
-        return new GeneratePlaylistActivity(getPlaylistDao());
+        return new GeneratePlaylistActivity(getPlaylistDao(), getGenreDao());
     }
 
     public static final class Builder {

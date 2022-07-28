@@ -2,7 +2,7 @@ package dao;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import dynamoDB.Playlist;
-import dynamoDB.UndergroundGenreModel;
+import models.UndergroundGenreModel;
 import exceptions.InvalidPlaylistIdException;
 
 import javax.inject.Inject;
@@ -27,11 +27,12 @@ public class GenreDao {
         return undergroundGenreModel;
     }
 
-    public Playlist getPlaylist(String playlistId) {
-        Playlist playlist = this.dynamoDBMapper.load(Playlist.class, playlistId);
-        if (playlist == null) {
-            throw new InvalidPlaylistIdException("Playlist Does Not Exist, Bitch" + playlistId);
+    public UndergroundGenreModel getUndergroundPlaylist(String genreKey) {
+        UndergroundGenreModel undergroundGenreModel = this.dynamoDBMapper.load(UndergroundGenreModel.class, genreKey);
+        if (undergroundGenreModel == null) {
+            throw new InvalidPlaylistIdException("Playlist Does Not Exist, Bitch" + undergroundGenreModel);
         }
-        return playlist;
+        return undergroundGenreModel;
     }
+
 }
