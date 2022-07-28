@@ -35,6 +35,7 @@ you are still debating internally that you might like help working through.*
 3. How many songs based off the user survey will be provided? We can have one song provided, 
    or a list of 10 songs?
 4. Are the upvotes going to be their playlist songs?
+5. How can we populate tables in DynamoDB using the YAML files.
 
 ## 3. Use Cases
 
@@ -51,6 +52,9 @@ U3. *As an Underground customer, I want to be able to browse the libraries accor
 U4. *As an Underground customer, I want to listen to music that is curated to my own tastes*
 
 U4. *As an Underground customer, I want the option to listen to diverse new artists*
+
+
+We are using DynamoDB to save time because storage is cheap and time is not.
 
 ## 4. Project Scope
 
