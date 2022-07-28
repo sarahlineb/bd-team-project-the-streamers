@@ -1,15 +1,17 @@
 package models;
+
 import java.util.Objects;
 
-public class SongModel {
+public class MainstreamSongModel {
     private String trackNumber;
     private String genreKey;
     private String artist;
     private String songTitle;
 
-    public SongModel() {}
+    public MainstreamSongModel() {
+    }
 
-    public SongModel (Builder builder) {
+    public MainstreamSongModel(Builder builder) {
         this.trackNumber = builder.trackNumber;
         this.genreKey = builder.genreKey;
         this.artist = builder.artist;
@@ -52,8 +54,8 @@ public class SongModel {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SongModel songModel = (SongModel) o;
-        return Objects.equals(trackNumber, songModel.trackNumber) && Objects.equals(genreKey, songModel.genreKey) && Objects.equals(artist, songModel.artist) && Objects.equals(songTitle, songModel.songTitle);
+        MainstreamSongModel that = (MainstreamSongModel) o;
+        return Objects.equals(trackNumber, that.trackNumber) && Objects.equals(genreKey, that.genreKey) && Objects.equals(artist, that.artist) && Objects.equals(songTitle, that.songTitle);
     }
 
     @Override
@@ -63,9 +65,9 @@ public class SongModel {
 
     @Override
     public String toString() {
-        return "SongModel{" +
+        return "MainstreamSongModel{" +
                 "trackNumber='" + trackNumber + '\'' +
-                ", genreKey='" + genreKey + '\'' +
+                ", genre_key='" + genreKey + '\'' +
                 ", artist='" + artist + '\'' +
                 ", songTitle='" + songTitle + '\'' +
                 '}';
@@ -79,22 +81,23 @@ public class SongModel {
         private String artist;
         private String songTitle;
 
-        private Builder withTrackNumber (String trackNumberToUse) {
+
+        private Builder withTrackNumber(String trackNumberToUse) {
             this.trackNumber = trackNumberToUse;
             return this;
         }
 
-        private Builder withGenreKey (String genreKeyToUse) {
+        private Builder withGenreKey(String genreKeyToUse) {
             this.genreKey = genreKeyToUse;
             return this;
         }
 
-        private Builder withArtist (String artistToUse) {
+        private Builder withArtist(String artistToUse) {
             this.artist = artistToUse;
             return this;
         }
 
-        private Builder withSongTitle (String songTitleToUse) {
+        private Builder withSongTitle(String songTitleToUse) {
             this.songTitle = songTitleToUse;
             return this;
         }

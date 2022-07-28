@@ -3,20 +3,18 @@ package activity;
 import com.amazonaws.services.lambda.runtime.Context;
 import dao.GenreDao;
 import dao.PlaylistDao;
-import models.MainstreamTrackModel;
+import models.MainstreamSongModel;
 import dynamoDB.Playlist;
 import models.PlaylistModel;
 import models.UndergroundGenreModel;
+import models.UndergroundSongModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import requests.GeneratePlaylistRequest;
 import results.GeneratePlaylistResult;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class GeneratePlaylistActivity implements RequestHandler <GeneratePlaylistRequest, GeneratePlaylistResult> {
     private final Logger log = LogManager.getLogger();
@@ -34,7 +32,7 @@ public class GeneratePlaylistActivity implements RequestHandler <GeneratePlaylis
         log.info("Received Generate Playlist Request {}", generatePlaylistRequest);
         String requestedId = generatePlaylistRequest.getPlaylistId();
         Playlist playlist = playlistDao.getPlaylist(requestedId);
-        List<MainstreamTrackModel> newPlaylist = playlist.getSongInfo();
+        List<MainstreamSongModel> newPlaylist = playlist.getSongInfo();
         Map<String, Integer> genreCount = new HashMap<>();
         for (int i = 0; i< newPlaylist.size(); i++) {
             String genreKey = newPlaylist.get(i).getGenreKey();
@@ -45,12 +43,14 @@ public class GeneratePlaylistActivity implements RequestHandler <GeneratePlaylis
             }
         }
         UndergroundGenreModel undergroundGenreModel;
+        List<UndergroundSongModel> undergroundPlaylist = new ArrayList<>();
         for(String genreKey : genreCount.keySet()) {
             undergroundGenreModel = genreDao.getUndergroundPlaylist(genreKey);
             for(int i = 0; i < genreCount.get(genreKey); i++) {
-                // Random Number Generator Added Here
-                Set<String> undergroundPlaylist = undergroundGenreModel.getSongInfo();
-
+                undergroundPlaylist = undergroundGenreModel.getSongInfo();
+                Collections.shuffle(undergroundPlaylist);
+                List<UndergroundSongModel> newGeneratedList = new ArrayList<>();
+                newGeneratedList.add(undergroundPlaylist);
             }
         }
 

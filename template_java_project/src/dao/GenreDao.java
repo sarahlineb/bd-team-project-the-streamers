@@ -30,7 +30,7 @@ public class GenreDao {
     public UndergroundGenreModel getUndergroundPlaylist(String genreKey) {
         UndergroundGenreModel undergroundGenreModel = this.dynamoDBMapper.load(UndergroundGenreModel.class, genreKey);
         if (undergroundGenreModel == null) {
-            throw new InvalidPlaylistIdException("Playlist Does Not Exist, Bitch" + undergroundGenreModel);
+            throw new InvalidPlaylistIdException("Genre Not Present, Bitch" + undergroundGenreModel);
         }
         return undergroundGenreModel;
     }

@@ -3,6 +3,7 @@ package dynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import models.MainstreamSongModel;
 import models.MainstreamTrackModel;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 public class Playlist {
     private String playlistId;
     private int songCount;
-    private List<MainstreamTrackModel> songInfo;
+    private List<MainstreamSongModel> songInfo;
 
     @DynamoDBHashKey(attributeName = "playlist_id")
     public String getPlaylistId() {
@@ -19,12 +20,12 @@ public class Playlist {
     }
 
     @DynamoDBAttribute(attributeName = "song_count")
-    public int songCount() {
+    public int getSongCount() {
         return songCount;
     }
 
     @DynamoDBAttribute(attributeName = "song_info")
-    public List<MainstreamTrackModel> getSongInfo() {
+    public List<MainstreamSongModel> getSongInfo() {
         System.out.println(songInfo);
         return songInfo;
     }
